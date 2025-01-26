@@ -95,15 +95,22 @@ check_packages curl ca-certificates gnupg2 dirmngr unzip bash-completion build-e
     libgl1-mesa-dev libgstreamer-gl1.0-0 libpulse-dev libxcb-glx0 libxcb-icccm4 libxcb-image0 \
     libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-render0 libxcb-shape0 libxcb-shm0 \
     libxcb-sync1 libxcb-util1 libxcb-xfixes0 libxcb-xinerama0 libxcb1 libxkbcommon-dev \
-    libxkbcommon-x11-0 libxcb-xkb-dev libxcb-cursor0 clang clangd python3 python3-pip
+    libxkbcommon-x11-0 libxcb-xkb-dev libxcb-cursor0 clang clangd python3 python3-pip pipx
 
 # Ensure that login shells get the correct path if the user updated the PATH using ENV.
 rm -f /etc/profile.d/00-restore-env.sh
 echo "export PATH=${PATH//$(sh -lc 'echo $PATH')/\$PATH}" > /etc/profile.d/00-restore-env.sh
 chmod +x /etc/profile.d/00-restore-env.sh
 
+pipx ensurepath
+if (( $? > 0 ))
+then
+    echo "'pipx ensurepath' failed"
+    exit 1
+fi
+
 # Install aqtinstall
-pip install aqtinstall
+pipx install aqtinstall
 if (( $? > 0 ))
 then
     echo "Failed to install aqtinstall"
