@@ -1,0 +1,19 @@
+{
+    "name": "qt6-devcontainer",
+    "image": "mcr.microsoft.com/vscode/devcontainers/base:debian-12",
+    "features": {
+        "./qt6": {}
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "search.exclude": {
+                    "gitignore": true
+                },
+                "terminal.integrated.shell.linux": "/bin/bash"
+            },
+            "extensions": []
+        }
+    },
+    "remoteUser": "vscode"
+}
