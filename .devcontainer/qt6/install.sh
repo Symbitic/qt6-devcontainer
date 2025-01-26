@@ -109,6 +109,8 @@ then
     exit 1
 fi
 
+export PATH=${PATH}:/root/.local/bin
+
 # Install aqtinstall
 pipx install aqtinstall
 if (( $? > 0 ))
