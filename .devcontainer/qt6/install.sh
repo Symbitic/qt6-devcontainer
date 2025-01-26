@@ -95,7 +95,8 @@ check_packages curl ca-certificates gnupg2 dirmngr unzip bash-completion build-e
     libgl1-mesa-dev libgstreamer-gl1.0-0 libpulse-dev libxcb-glx0 libxcb-icccm4 libxcb-image0 \
     libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-render0 libxcb-shape0 libxcb-shm0 \
     libxcb-sync1 libxcb-util1 libxcb-xfixes0 libxcb-xinerama0 libxcb1 libxkbcommon-dev \
-    libxkbcommon-x11-0 libxcb-xkb-dev libxcb-cursor0 clang clangd python3 python3-pip pipx
+    libxkbcommon-x11-0 libxcb-xkb-dev libxcb-cursor0 clang clangd python3 python3-pip pipx \
+    ninja-build
 
 # Ensure that login shells get the correct path if the user updated the PATH using ENV.
 rm -f /etc/profile.d/00-restore-env.sh
