@@ -1,0 +1,22 @@
+{
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "clang-format.style": "file",
+    "clangd.arguments": [
+        "--background-index"
+    ],
+    "cmake.configureOnOpen": false,
+    "qt-core.doNotAskForDefaultQtInstallationRoot": true,
+    "qt-core.qtInstallationRoot": "/opt/Qt",
+    "[c]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+    },
+    "[cpp]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+    },
+    "search.exclude": {
+        "gitignore": true
+    }
+}

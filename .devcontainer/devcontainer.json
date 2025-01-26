@@ -7,12 +7,30 @@
     "customizations": {
         "vscode": {
             "settings": {
+                "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+                "C_Cpp.intelliSenseEngine": "disabled",
+                "clang-format.style": "file",
+                "clangd.arguments": [
+                    "--background-index"
+                ],
+                "cmake.configureOnOpen": false,
+                "[c]": {
+                    "editor.formatOnSave": true,
+                    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+                },
+                "[cpp]": {
+                    "editor.formatOnSave": true,
+                    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+                },
                 "search.exclude": {
                     "gitignore": true
                 },
                 "terminal.integrated.shell.linux": "/bin/bash"
             },
-            "extensions": []
+            "extensions": [
+                "TheQtCompany.qt",
+                "llvm-vs-code-extensions.vscode-clangd"
+            ]
         }
     },
     "remoteUser": "vscode"

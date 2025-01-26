@@ -35,7 +35,9 @@
             "settings": {
                 "files.watcherExclude": {
                     "**/target/**": true
-                }
+                },
+                "qt-core.doNotAskForDefaultQtInstallationRoot": true,
+                "qt-core.qtInstallationRoot": "/opt/Qt"
             }
         }
     },

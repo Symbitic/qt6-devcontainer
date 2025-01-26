@@ -1,5 +1,5 @@
-# Created by https://gitignore.deno.dev/api/global/windows,global/macos,global/linux,qt,cmake?extras=/build,/temp
-# Edit at https://gitignore.deno.dev/?templates=Global/Windows,Global/macOS,Global/Linux,Qt,CMake&extras=/build,/temp
+# Created by https://gitignore.deno.dev/api/global/windows,global/macos,global/linux,qt,cmake?extras=/build,/temp,/.cache
+# Edit at https://gitignore.deno.dev/?templates=Global/Windows,Global/macOS,Global/Linux,Qt,CMake&extras=/build,/temp,/.cache
 
 ### Global/Windows ###
 # Windows thumbnail cache files
@@ -143,3 +143,4 @@ CMakeUserPresets.json
 ### Extras ###
 /build
 /temp
+/.cache

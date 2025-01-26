@@ -103,6 +103,7 @@ rm -f /etc/profile.d/00-restore-env.sh
 echo "export PATH=${PATH//$(sh -lc 'echo $PATH')/\$PATH}" > /etc/profile.d/00-restore-env.sh
 chmod +x /etc/profile.d/00-restore-env.sh
 
+# Setup pipx
 pipx ensurepath
 if (( $? > 0 ))
 then
@@ -110,6 +111,7 @@ then
     exit 1
 fi
 
+# Ensure pipx binaries are in PATH
 export PATH=${PATH}:/root/.local/bin
 
 # Install aqtinstall
@@ -121,7 +123,7 @@ then
 fi
 
 # Install
-echo "Installing ${HOST} ${TARGET} ${VERSION} ${ARCH}..."
+echo "Installing Qt6 ${HOST} ${TARGET} ${VERSION} ${ARCH}..."
 aqt install-qt ${HOST} ${TARGET} ${VERSION} ${ARCH} --outputdir "${INSTALL_DIR}" ${QT_MODULES_FLAG} ${QT_MODULES}
 if (( $? > 0 ))
 then
