@@ -1,6 +1,6 @@
 {
     "recommendations": [
         "TheQtCompany.qt",
-        "llvm-vs-code-extensions.vscode-clangd"
+        "xaver.clang-format"
     ]
 }

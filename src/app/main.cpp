@@ -20,7 +20,8 @@ int main(int argc, char *argv[])
 
     QCommandLineParser parser;
     parser.addOptions({
-            { "port", QCoreApplication::translate("main", "The port the server listens on."), "port" },
+            { "port", QCoreApplication::translate("main", "The port the server listens on."),
+              "port" },
     });
     parser.addHelpOption();
     parser.process(app);

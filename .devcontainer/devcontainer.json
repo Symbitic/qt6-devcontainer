@@ -7,20 +7,16 @@
     "customizations": {
         "vscode": {
             "settings": {
+                "C_Cpp.default.compileCommands": "${workspaceFolder}/build/compile_commands.json",
                 "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
-                "C_Cpp.intelliSenseEngine": "disabled",
-                "clang-format.style": "file",
-                "clangd.arguments": [
-                    "--background-index"
-                ],
                 "cmake.configureOnOpen": false,
                 "[c]": {
                     "editor.formatOnSave": true,
-                    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+                    "editor.defaultFormatter": "xaver.clang-format"
                 },
                 "[cpp]": {
                     "editor.formatOnSave": true,
-                    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+                    "editor.defaultFormatter": "xaver.clang-format"
                 },
                 "search.exclude": {
                     "gitignore": true
@@ -29,7 +25,7 @@
             },
             "extensions": [
                 "TheQtCompany.qt",
-                "llvm-vs-code-extensions.vscode-clangd"
+                "xaver.clang-format"
             ]
         }
     },
