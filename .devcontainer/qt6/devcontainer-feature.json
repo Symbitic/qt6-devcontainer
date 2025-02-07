@@ -30,6 +30,7 @@
     "customizations": {
         "vscode": {
             "extensions": [
+                "ms-vscode.cpptools",
                 "TheQtCompany.qt",
                 "xaver.clang-format"
             ],
