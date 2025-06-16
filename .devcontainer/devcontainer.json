@@ -1,5 +1,5 @@
 {
-    "name": "qt6-devcontainer",
+    "name": "qt-devcontainer-example-2",
     "image": "mcr.microsoft.com/vscode/devcontainers/base:debian-12",
     "features": {
         "./qt6": {}

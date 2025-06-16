@@ -24,8 +24,9 @@ UPDATE_RC="${UPDATE_RC:-"true"}"
 # Support modules
 if [ ${#MODULES[@]} -gt 0 ]
 then
-    QT_MODULES=(`echo ${MODULES} | tr ',' ' '`)
+    QT_MODULES=$(echo ${MODULES[*]} | tr ',' ' ')
     QT_MODULES_FLAG="-m"
+    echo "(*) Modules: ${QT_MODULES}"
 fi
 
 # Runs apt-get update if needed.
@@ -91,11 +92,12 @@ then
 fi
 
 # Install dependencies
-check_packages curl ca-certificates gnupg2 dirmngr unzip build-essential cmake \
+check_packages curl ca-certificates gnupg2 dirmngr unzip build-essential cmake clang-format \
     libgl1-mesa-dev libgstreamer-gl1.0-0 libpulse-dev libxcb-glx0 libxcb-icccm4 libxcb-image0 \
     libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-render0 libxcb-shape0 libxcb-shm0 \
     libxcb-sync1 libxcb-util1 libxcb-xfixes0 libxcb-xinerama0 libxcb1 libxkbcommon-dev \
-    libxkbcommon-x11-0 libxcb-xkb-dev libxcb-cursor0 python3 python3-pip pipx ninja-build
+    libxkbcommon-x11-0 libxcb-xkb-dev libxcb-cursor0 python3 python3-pip pipx ninja-build \
+    libfontconfig1 libfreetype6 libvulkan-dev
 
 # Ensure that login shells get the correct path if the user updated the PATH using ENV.
 rm -f /etc/profile.d/00-restore-env.sh
@@ -122,7 +124,8 @@ then
 fi
 
 # Install
-echo "Installing Qt6 ${HOST} ${TARGET} ${VERSION} ${ARCH}..."
+echo "(*) Installing Qt6..."
+echo aqt install-qt ${HOST} ${TARGET} ${VERSION} ${ARCH} --outputdir "${INSTALL_DIR}" ${QT_MODULES_FLAG} ${QT_MODULES}
 aqt install-qt ${HOST} ${TARGET} ${VERSION} ${ARCH} --outputdir "${INSTALL_DIR}" ${QT_MODULES_FLAG} ${QT_MODULES}
 if (( $? > 0 ))
 then
