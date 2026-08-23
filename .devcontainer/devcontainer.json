@@ -29,5 +29,16 @@
             ]
         }
     },
+    "forwardPorts": [9090],
+    "portsAttributes": {
+        "9090": {
+            "label": "Qt GUI",
+            "onAutoForward": "openBrowser"
+        }
+    },
+    "remoteEnv": {
+        "QT_QPA_PLATFORM": "web",
+        "QT_QPA_PLATFORM_PLUGIN_PATH": "/opt/qtwebplugin"
+    },
     "remoteUser": "vscode"
 }
