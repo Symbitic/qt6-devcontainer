@@ -262,7 +262,7 @@ EOF
 )"
 
 echo "(*) Installing Qt Web QPA plugin..."
-fetch_and_install_web_qpa ${VERSION}
+fetch_and_install_web_qpa ${VERSION%.*}
 
 # Clean up
 rm -rf /var/lib/apt/lists/*
